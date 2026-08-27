@@ -5,9 +5,17 @@
 
     <meta charset="UTF-8">
 
-    <title>Topologías de Red</title>
+    <title>Curso de Redes</title>
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             margin: 0;
@@ -15,43 +23,69 @@
             background: #f1f5f9;
         }
 
-        header {
+        nav {
             background: #0f172a;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        header {
+            background: #1d4ed8;
             color: white;
             text-align: center;
-            padding: 35px;
+            padding: 70px 20px;
         }
 
-        .contenedor {
+        section {
             width: 90%;
             max-width: 1100px;
-            margin: 30px auto;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
         }
 
-        .topologias {
+        h2 {
+            color: #1d4ed8;
+        }
+
+        .tarjetas {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-        .topologia {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px #ccc;
-        }
-
-        .topologia h2 {
-            color: #2563eb;
-        }
-
-        .diagrama {
-            background: #e0f2fe;
+        .tarjeta {
             padding: 20px;
-            margin-top: 15px;
+            background: #eff6ff;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
             text-align: center;
-            border-radius: 8px;
-            font-size: 20px;
+            padding: 25px;
         }
 
     </style>
@@ -60,72 +94,90 @@
 
 <body>
 
-<header>
+<nav>
 
-    <h1>Topologías de Red</h1>
+    <ul>
 
-    <p>
-        Formas en las que pueden organizarse los dispositivos
-    </p>
+        <li><a href="#inicio">Inicio</a></li>
+
+        <li><a href="#tipos">Tipos</a></li>
+
+        <li><a href="#topologias">Topologías</a></li>
+
+        <li><a href="#dispositivos">Dispositivos</a></li>
+
+    </ul>
+
+</nav>
+
+<header id="inicio">
+
+    <h1>Curso de Redes de Computadoras</h1>
+
+    <p>Aprende los fundamentos de las redes</p>
 
 </header>
 
-<div class="contenedor">
+<section id="tipos">
 
-    <div class="topologias">
+    <h2>Tipos de Redes</h2>
 
-        <div class="topologia">
+    <div class="tarjetas">
 
-            <h2>Topología Estrella</h2>
-
-            <p>
-                Todos los dispositivos se conectan a un
-                dispositivo central.
-            </p>
-
-            <div class="diagrama">
-                PC ──┐<br>
-                PC ──┼── SWITCH<br>
-                PC ──┘
-            </div>
-
+        <div class="tarjeta">
+            <h3>LAN</h3>
+            <p>Red de área local.</p>
         </div>
 
-        <div class="topologia">
-
-            <h2>Topología Bus</h2>
-
-            <p>
-                Los dispositivos comparten un medio de
-                transmisión principal.
-            </p>
-
-            <div class="diagrama">
-                PC ─── PC ─── PC
-            </div>
-
+        <div class="tarjeta">
+            <h3>MAN</h3>
+            <p>Red de área metropolitana.</p>
         </div>
 
-        <div class="topologia">
-
-            <h2>Topología Anillo</h2>
-
-            <p>
-                Los dispositivos forman una conexión
-                cerrada.
-            </p>
-
-            <div class="diagrama">
-                PC → PC → PC → PC
-                <br>
-                ↑____________↓
-            </div>
-
+        <div class="tarjeta">
+            <h3>WAN</h3>
+            <p>Red de área amplia.</p>
         </div>
 
     </div>
 
-</div>
+</section>
+
+<section id="topologias">
+
+    <h2>Topologías</h2>
+
+    <p>
+        Las topologías representan la forma en que los
+        dispositivos están conectados.
+    </p>
+
+    <ul>
+
+        <li>Estrella</li>
+        <li>Bus</li>
+        <li>Anillo</li>
+        <li>Malla</li>
+
+    </ul>
+
+</section>
+
+<section id="dispositivos">
+
+    <h2>Dispositivos</h2>
+
+    <p>
+        Router, Switch, Access Point, Modem y Firewall.
+    </p>
+
+</section>
+
+<footer>
+
+    <p>Curso de Redes © 2026</p>
+
+</footer>
 
 </body>
 
