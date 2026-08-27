@@ -5,42 +5,192 @@
 
     <meta charset="UTF-8">
 
-    <title>Redes Interactivas</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Redes de Computadoras</title>
 
     <style>
 
-        body {
-            font-family: Arial;
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             background: #f1f5f9;
+            color: #1e293b;
         }
 
-        header {
-            background: #1e3a8a;
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: #0f172a;
+
+            padding: 15px 5%;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
             color: white;
-            text-align: center;
-            padding: 50px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .contenedor {
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* INICIO */
+
+        .inicio {
+            min-height: 500px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(15,23,42,.9),
+                    rgba(30,64,175,.9)
+                );
+
+            color: white;
+
+            padding: 40px;
+        }
+
+        .inicio h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .inicio p {
+            font-size: 20px;
+        }
+
+        /* SECCIONES */
+
+        section {
             width: 90%;
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 1200px;
+
+            margin: 60px auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,.08);
+        }
+
+        section h2 {
+            color: #1d4ed8;
+            margin-bottom: 25px;
+        }
+
+        /* TARJETAS */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 20px;
         }
 
         .card {
-            background: white;
-            padding: 30px;
+            background: #eff6ff;
+
+            padding: 25px;
+
             border-radius: 12px;
-            box-shadow: 0 4px 10px #ccc;
+
+            transition: .3s;
         }
 
-        button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,.12);
+        }
+
+        .card h3 {
+            color: #2563eb;
+
+            margin-bottom: 15px;
+        }
+
+        /* TABLA */
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+
+            border-bottom: 1px solid #ddd;
+
+            text-align: left;
+        }
+
+        th {
             background: #2563eb;
             color: white;
+        }
+
+        tr:hover {
+            background: #f1f5f9;
+        }
+
+        /* BOTON */
+
+        button {
+            margin-top: 20px;
+
+            padding: 13px 25px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 16px;
+
             cursor: pointer;
         }
 
@@ -48,12 +198,53 @@
             background: #1d4ed8;
         }
 
-        #resultado {
-            margin-top: 20px;
-            padding: 20px;
-            background: #dbeafe;
-            border-radius: 8px;
+        /* INFORMACION */
+
+        #informacion {
             display: none;
+
+            margin-top: 20px;
+
+            padding: 20px;
+
+            background: #dbeafe;
+
+            border-radius: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0f172a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 700px) {
+
+            .inicio h1 {
+                font-size: 35px;
+            }
+
+            nav ul {
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 15px;
+            }
+
+            section {
+                width: 95%;
+                padding: 25px;
+            }
+
         }
 
     </style>
@@ -62,63 +253,371 @@
 
 <body>
 
-<header>
 
-    <h1>Redes de Computadoras</h1>
+<nav>
 
-    <p>Página interactiva</p>
+    <ul>
+
+        <li>
+            <a href="#inicio">Inicio</a>
+        </li>
+
+        <li>
+            <a href="#tipos">Tipos</a>
+        </li>
+
+        <li>
+            <a href="#topologias">Topologías</a>
+        </li>
+
+        <li>
+            <a href="#dispositivos">Dispositivos</a>
+        </li>
+
+        <li>
+            <a href="#protocolos">Protocolos</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<header class="inicio" id="inicio">
+
+    <h1>
+        Redes de Computadoras
+    </h1>
+
+    <p>
+        Aprende los fundamentos de las redes informáticas
+    </p>
 
 </header>
 
-<div class="contenedor">
 
-    <div class="card">
 
-        <h2>¿Qué es una red?</h2>
+<section id="tipos">
 
-        <p>
-            Una red permite que diferentes dispositivos
-            intercambien información.
-        </p>
+    <h2>Tipos de Redes</h2>
 
-        <button onclick="mostrarInformacion()">
-            Ver información
-        </button>
+    <div class="grid">
 
-        <div id="resultado">
+        <div class="card">
 
-            <h3>Elementos de una red</h3>
+            <h3>LAN</h3>
 
-            <ul>
+            <p>
+                Red de área local utilizada en hogares,
+                oficinas y laboratorios.
+            </p>
 
-                <li>Dispositivos</li>
-                <li>Medios de transmisión</li>
-                <li>Protocolos</li>
-                <li>Direcciones IP</li>
-                <li>Servicios de red</li>
+        </div>
 
-            </ul>
+        <div class="card">
+
+            <h3>MAN</h3>
+
+            <p>
+                Red que conecta diferentes zonas
+                dentro de una ciudad.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>WAN</h3>
+
+            <p>
+                Red que conecta dispositivos ubicados
+                en grandes distancias.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>WLAN</h3>
+
+            <p>
+                Red local que utiliza tecnologías
+                inalámbricas como Wi-Fi.
+            </p>
 
         </div>
 
     </div>
 
-</div>
+</section>
+
+
+
+<section id="topologias">
+
+    <h2>Topologías de Red</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>Estrella</h3>
+
+            <p>
+                Los dispositivos se conectan
+                a un dispositivo central.
+            </p>
+
+            <p>
+                PC ──┐<br>
+                PC ──┼── SWITCH<br>
+                PC ──┘
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Bus</h3>
+
+            <p>
+                Todos los dispositivos comparten
+                un medio de transmisión.
+            </p>
+
+            <p>
+                PC ─── PC ─── PC
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Anillo</h3>
+
+            <p>
+                Los dispositivos forman una
+                conexión cerrada.
+            </p>
+
+            <p>
+                PC → PC → PC → PC
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Malla</h3>
+
+            <p>
+                Los dispositivos poseen múltiples
+                conexiones entre ellos.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section id="dispositivos">
+
+    <h2>Dispositivos de Red</h2>
+
+    <table>
+
+        <tr>
+
+            <th>
+                Dispositivo
+            </th>
+
+            <th>
+                Función
+            </th>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Router
+            </td>
+
+            <td>
+                Conecta diferentes redes y dirige paquetes.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Switch
+            </td>
+
+            <td>
+                Conecta dispositivos dentro de una LAN.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Access Point
+            </td>
+
+            <td>
+                Permite conexiones inalámbricas.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Firewall
+            </td>
+
+            <td>
+                Controla y filtra el tráfico de red.
+            </td>
+
+        </tr>
+
+    </table>
+
+</section>
+
+
+
+<section id="protocolos">
+
+    <h2>Protocolos de Red</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>HTTP</h3>
+
+            <p>
+                Protocolo utilizado para la comunicación
+                entre navegadores y servidores web.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>HTTPS</h3>
+
+            <p>
+                Permite comunicación web protegida
+                mediante cifrado.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>TCP/IP</h3>
+
+            <p>
+                Conjunto fundamental de protocolos
+                utilizados en Internet.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>DNS</h3>
+
+            <p>
+                Traduce nombres de dominio a
+                direcciones IP.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>Conceptos importantes</h2>
+
+    <p>
+        Haz clic en el botón para mostrar algunos
+        elementos fundamentales de una red.
+    </p>
+
+    <button onclick="mostrarInformacion()">
+        Mostrar información
+    </button>
+
+    <div id="informacion">
+
+        <h3>Elementos de una red</h3>
+
+        <ul>
+
+            <li>Dispositivos de red</li>
+
+            <li>Medios de transmisión</li>
+
+            <li>Protocolos</li>
+
+            <li>Direcciones IP</li>
+
+            <li>Servicios de red</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        Página educativa de Redes de Computadoras
+    </p>
+
+    <p>
+        © 2026
+    </p>
+
+</footer>
+
+
 
 <script>
 
 function mostrarInformacion() {
 
-    const resultado = document.getElementById("resultado");
+    const informacion =
+        document.getElementById("informacion");
 
-    if (resultado.style.display === "none" ||
-        resultado.style.display === "") {
+    if (informacion.style.display === "none" ||
+        informacion.style.display === "") {
 
-        resultado.style.display = "block";
+        informacion.style.display = "block";
 
     } else {
 
-        resultado.style.display = "none";
+        informacion.style.display = "none";
 
     }
 
