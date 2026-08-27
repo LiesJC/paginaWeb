@@ -2,107 +2,125 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <title>Tipos de Redes</title>
+    <title>Topologías de Red</title>
 
     <style>
 
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #eef2f7;
+            font-family: Arial;
+            background: #f1f5f9;
         }
 
         header {
-            background: #172554;
+            background: #0f172a;
             color: white;
             text-align: center;
-            padding: 40px;
+            padding: 35px;
         }
 
         .contenedor {
             width: 90%;
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 30px auto;
         }
 
-        .tarjetas {
+        .topologias {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-        .tarjeta {
+        .topologia {
             background: white;
             padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,.1);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
         }
 
-        .tarjeta h2 {
+        .topologia h2 {
             color: #2563eb;
         }
 
-        .tarjeta:hover {
-            transform: translateY(-5px);
-            transition: .3s;
+        .diagrama {
+            background: #e0f2fe;
+            padding: 20px;
+            margin-top: 15px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 20px;
         }
 
     </style>
+
 </head>
 
 <body>
 
 <header>
 
-    <h1>Redes de Computadoras</h1>
+    <h1>Topologías de Red</h1>
 
     <p>
-        Principales tipos de redes
+        Formas en las que pueden organizarse los dispositivos
     </p>
 
 </header>
 
 <div class="contenedor">
 
-    <div class="tarjetas">
+    <div class="topologias">
 
-        <div class="tarjeta">
-            <h2>LAN</h2>
+        <div class="topologia">
+
+            <h2>Topología Estrella</h2>
+
             <p>
-                Red utilizada en espacios pequeños como casas,
-                oficinas o laboratorios.
+                Todos los dispositivos se conectan a un
+                dispositivo central.
             </p>
+
+            <div class="diagrama">
+                PC ──┐<br>
+                PC ──┼── SWITCH<br>
+                PC ──┘
+            </div>
+
         </div>
 
-        <div class="tarjeta">
-            <h2>MAN</h2>
+        <div class="topologia">
+
+            <h2>Topología Bus</h2>
+
             <p>
-                Red que conecta diferentes zonas dentro
-                de una ciudad.
+                Los dispositivos comparten un medio de
+                transmisión principal.
             </p>
+
+            <div class="diagrama">
+                PC ─── PC ─── PC
+            </div>
+
         </div>
 
-        <div class="tarjeta">
-            <h2>WAN</h2>
-            <p>
-                Red que conecta dispositivos ubicados
-                en grandes distancias.
-            </p>
-        </div>
+        <div class="topologia">
 
-        <div class="tarjeta">
-            <h2>WLAN</h2>
+            <h2>Topología Anillo</h2>
+
             <p>
-                Red local que utiliza tecnología inalámbrica
-                como Wi-Fi.
+                Los dispositivos forman una conexión
+                cerrada.
             </p>
+
+            <div class="diagrama">
+                PC → PC → PC → PC
+                <br>
+                ↑____________↓
+            </div>
+
         </div>
 
     </div>
@@ -110,4 +128,5 @@
 </div>
 
 </body>
+
 </html>
