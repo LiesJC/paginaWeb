@@ -3,42 +3,55 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Redes de Computadoras</title>
+
+    <title>Tipos de Redes</title>
 
     <style>
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f2f5f9;
-            color: #222;
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
         }
 
         header {
-            background-color: #1e3a8a;
+            background: #172554;
             color: white;
-            padding: 30px;
             text-align: center;
+            padding: 40px;
         }
 
-        main {
-            width: 80%;
-            margin: 30px auto;
+        .contenedor {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
         }
 
-        section {
-            background-color: white;
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background: white;
             padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,.1);
         }
 
-        h2 {
-            color: #1e3a8a;
+        .tarjeta h2 {
+            color: #2563eb;
         }
 
-        li {
-            margin: 10px;
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            transition: .3s;
         }
 
     </style>
@@ -46,36 +59,55 @@
 
 <body>
 
-    <header>
-        <h1>Redes de Computadoras</h1>
-        <p>Introducción a las redes informáticas</p>
-    </header>
+<header>
 
-    <main>
+    <h1>Redes de Computadoras</h1>
 
-        <section>
-            <h2>¿Qué es una red?</h2>
+    <p>
+        Principales tipos de redes
+    </p>
 
+</header>
+
+<div class="contenedor">
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <h2>LAN</h2>
             <p>
-                Una red de computadoras permite conectar diferentes
-                dispositivos para compartir información y recursos.
+                Red utilizada en espacios pequeños como casas,
+                oficinas o laboratorios.
             </p>
-        </section>
+        </div>
 
-        <section>
+        <div class="tarjeta">
+            <h2>MAN</h2>
+            <p>
+                Red que conecta diferentes zonas dentro
+                de una ciudad.
+            </p>
+        </div>
 
-            <h2>Tipos de redes</h2>
+        <div class="tarjeta">
+            <h2>WAN</h2>
+            <p>
+                Red que conecta dispositivos ubicados
+                en grandes distancias.
+            </p>
+        </div>
 
-            <ul>
-                <li>LAN - Red de área local</li>
-                <li>MAN - Red metropolitana</li>
-                <li>WAN - Red de área amplia</li>
-                <li>WLAN - Red inalámbrica</li>
-            </ul>
+        <div class="tarjeta">
+            <h2>WLAN</h2>
+            <p>
+                Red local que utiliza tecnología inalámbrica
+                como Wi-Fi.
+            </p>
+        </div>
 
-        </section>
+    </div>
 
-    </main>
+</div>
 
 </body>
 </html>
