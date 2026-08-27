@@ -5,87 +5,55 @@
 
     <meta charset="UTF-8">
 
-    <title>Curso de Redes</title>
+    <title>Redes Interactivas</title>
 
     <style>
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            margin: 0;
             font-family: Arial;
+            margin: 0;
             background: #f1f5f9;
         }
 
-        nav {
-            background: #0f172a;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-        }
-
-        nav ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #60a5fa;
-        }
-
         header {
-            background: #1d4ed8;
+            background: #1e3a8a;
             color: white;
             text-align: center;
-            padding: 70px 20px;
+            padding: 50px;
         }
 
-        section {
+        .contenedor {
             width: 90%;
-            max-width: 1100px;
+            max-width: 900px;
             margin: 40px auto;
+        }
+
+        .card {
             background: white;
-            padding: 35px;
+            padding: 30px;
             border-radius: 12px;
+            box-shadow: 0 4px 10px #ccc;
         }
 
-        h2 {
-            color: #1d4ed8;
-        }
-
-        .tarjetas {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .tarjeta {
-            padding: 20px;
-            background: #eff6ff;
-            border-radius: 10px;
-        }
-
-        footer {
-            background: #0f172a;
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
             color: white;
-            text-align: center;
-            padding: 25px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 20px;
+            background: #dbeafe;
+            border-radius: 8px;
+            display: none;
         }
 
     </style>
@@ -94,90 +62,69 @@
 
 <body>
 
-<nav>
+<header>
 
-    <ul>
+    <h1>Redes de Computadoras</h1>
 
-        <li><a href="#inicio">Inicio</a></li>
-
-        <li><a href="#tipos">Tipos</a></li>
-
-        <li><a href="#topologias">Topologías</a></li>
-
-        <li><a href="#dispositivos">Dispositivos</a></li>
-
-    </ul>
-
-</nav>
-
-<header id="inicio">
-
-    <h1>Curso de Redes de Computadoras</h1>
-
-    <p>Aprende los fundamentos de las redes</p>
+    <p>Página interactiva</p>
 
 </header>
 
-<section id="tipos">
+<div class="contenedor">
 
-    <h2>Tipos de Redes</h2>
+    <div class="card">
 
-    <div class="tarjetas">
+        <h2>¿Qué es una red?</h2>
 
-        <div class="tarjeta">
-            <h3>LAN</h3>
-            <p>Red de área local.</p>
-        </div>
+        <p>
+            Una red permite que diferentes dispositivos
+            intercambien información.
+        </p>
 
-        <div class="tarjeta">
-            <h3>MAN</h3>
-            <p>Red de área metropolitana.</p>
-        </div>
+        <button onclick="mostrarInformacion()">
+            Ver información
+        </button>
 
-        <div class="tarjeta">
-            <h3>WAN</h3>
-            <p>Red de área amplia.</p>
+        <div id="resultado">
+
+            <h3>Elementos de una red</h3>
+
+            <ul>
+
+                <li>Dispositivos</li>
+                <li>Medios de transmisión</li>
+                <li>Protocolos</li>
+                <li>Direcciones IP</li>
+                <li>Servicios de red</li>
+
+            </ul>
+
         </div>
 
     </div>
 
-</section>
+</div>
 
-<section id="topologias">
+<script>
 
-    <h2>Topologías</h2>
+function mostrarInformacion() {
 
-    <p>
-        Las topologías representan la forma en que los
-        dispositivos están conectados.
-    </p>
+    const resultado = document.getElementById("resultado");
 
-    <ul>
+    if (resultado.style.display === "none" ||
+        resultado.style.display === "") {
 
-        <li>Estrella</li>
-        <li>Bus</li>
-        <li>Anillo</li>
-        <li>Malla</li>
+        resultado.style.display = "block";
 
-    </ul>
+    } else {
 
-</section>
+        resultado.style.display = "none";
 
-<section id="dispositivos">
+    }
 
-    <h2>Dispositivos</h2>
+}
 
-    <p>
-        Router, Switch, Access Point, Modem y Firewall.
-    </p>
-
-</section>
-
-<footer>
-
-    <p>Curso de Redes © 2026</p>
-
-</footer>
+</script>
 
 </body>
 
